@@ -114,6 +114,10 @@ body {
     background-color: red;
 }
 
+.table_title{
+  color: white;
+}
+
 .pingTime {
   position: absolute;
   right: 0px;
@@ -1460,8 +1464,8 @@ ux-dialog {
   width:99px;
   display: inline-block;
 }
-.nav-dash-icon {
-    content: url($cdn + 'images/dash.png');
+.nav-solana-icon {
+    content: url($cdn + 'images/solana.png');
     vertical-align: -20%;
   }
   .coinspot-icon{
