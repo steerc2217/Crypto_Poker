@@ -1,6 +1,6 @@
 ﻿# crypto-poker
  
- Click here to view the [LIVE DEMO](https://troyshouse.poker/)
+ Click here to view the [LIVE DEMO](http://3.70.99.104:9000/)
 
 Features
 ---
@@ -18,7 +18,7 @@ Features
  <img align="right" width="350" src="./image.png"></img>
 
 
-Click here to view the [LIVE DEMO](https://troyshouse.poker/)
+Click here to view the [LIVE DEMO](http://3.70.99.104:9000/)
 
 
 
