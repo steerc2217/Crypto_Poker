@@ -8,12 +8,8 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   padding-top: 50px;  
 }
-.navbar{
-  background-color: #00060F;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: white;
+.navbar-default {
+  background-color: lightcyan;
 }
 .nav-logo{
     background:url($cdn + 'images/logo.png') no-repeat;
@@ -23,7 +19,7 @@ body {
     display: inline-block;
 }
 .container-fluid {
-  background-color: #061d39;
+  background-color: #E8E8E8;
   padding-bottom: 55px;
 }
 .header-nav {
@@ -112,10 +108,6 @@ body {
 }
 .cashOut:hover {
     background-color: red;
-}
-
-.table_title{
-  color: white;
 }
 
 .pingTime {
@@ -758,7 +750,7 @@ position: absolute;
 // }
 
 #poker-room {
-    background-image: url($cdn +'images/bg-green1.png');
+    background-image: url($cdn +'images/bg-green.png');
     background-position: center;
     background-repeat: no-repeat;
     background-position: 50% 50%;  
@@ -788,7 +780,7 @@ position: absolute;
 .grayscale {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
-  color: gray;
+  color:grey;
   font-style:italic;
 }
 
@@ -1203,12 +1195,11 @@ ux-dialog {
   }
 
   .panel-footer-ex {
-    background-color: #00060F;
+    
     font-size: 0.7em;
     text-align: center;
     height: 45px;
-    position: relative;
-    color: white;
+    position: relative;    
   }
 
   .footer-content {
@@ -1464,8 +1455,8 @@ ux-dialog {
   width:99px;
   display: inline-block;
 }
-.nav-solana-icon {
-    content: url($cdn + 'images/solana.png');
+.nav-dash-icon {
+    content: url($cdn + 'images/dash.png');
     vertical-align: -20%;
   }
   .coinspot-icon{

@@ -3,8 +3,8 @@ import { Router, RouterConfiguration } from 'aurelia-router';
 import {AccountSettings} from "./account-settings";
 import { DialogService } from 'aurelia-dialog';
 import { ApiService } from "./lib/api-service";
-import * as $ from 'jquery';
 import { LoginPopup } from "./login-popup";
+import * as $ from 'jquery';
 import { Util } from "./lib/util";
 
 @autoinject()
