@@ -6,6 +6,9 @@
     "type": "???",
     "url": "???"
   },
+  "scripts": {
+    "start": "au run -w"
+  },
   "license": "MIT",
   "dependencies": {
     "aurelia-animator-css": "^1.0.2",
@@ -21,6 +24,7 @@
     "jquery": "^2.2.4",
     "long": "^4.0.0",
     "moment": "^2.22.0",
+    "node-sass": "^7.0.1",
     "protobufjs": "^6.8.6",
     "requirejs": "^2.3.2",
     "text": "github:requirejs/text#latest"

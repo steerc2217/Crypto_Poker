@@ -23,10 +23,12 @@ import { isPaymentServer } from '../app-configuration';
 import { PaymentServerApiService } from './pages/payment-server/payment-server-api.service';
 import { PaymentServerUrlService } from './pages/payment-server/payment-server-url.service';
 import { SetupAdminApiService } from './shared/SetupAdminApiService';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [AppComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 ﻿# crypto-poker
  
- Click here to view the [LIVE DEMO](http://3.70.99.104:9000/)
+ Click here to view the [LIVE DEMO](https://troyshouse.poker/)
 
 Features
 ---
@@ -8,17 +8,19 @@ Features
 * Casual Table Play
 * Tournaments
 * Admin management app
-* Crypto payment gateway (SOL,ETH, DASH, BTC support)
+* Crypto payment gateway (DASH, ETH, BTC support)
 
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  
  tldr
  This software is a hobby/research project - you are allowed to use it for ANY purpose (including commercial) but the software is provided "as is" without ANY warranty of any kind. Online poker is restricted in some jurisdictions - do your research. **None of this code should be considered commercial-grade**
  
- <img align="right" width="350" src="./image.png"></img>
+ ![screenshot](https://i.imgur.com/aLDDolt.png "Screenshot")
+ ![screenshot](https://i.imgur.com/3jfNjfQ.png "Admin 1")
+ ![screenshot](https://i.imgur.com/jUEddky.png "Admin 2")
 
 
-Click here to view the [LIVE DEMO](http://3.70.99.104:9000/)
+Click here to view the [LIVE DEMO](https://troyshouse.poker/)
 
 
 
@@ -63,4 +65,4 @@ npm test
 
 Credits:
 
-Thank you
+Thank you to [mdashx](https://github.com/mdashx) for [the inspiration](https://github.com/mdashx/pangea-poker-frontend) and the use of the background table images, cards and animation logic.

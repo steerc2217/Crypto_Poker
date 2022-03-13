@@ -1,18 +1,14 @@
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { AuthGuard } from './auth.guard';
 import {
   NbAuthComponent,
-  NbLoginComponent,
-  NbLogoutComponent,
-  NbRegisterComponent,
-  NbRequestPasswordComponent,
-  NbResetPasswordComponent,
 } from '@nebular/auth';
-import { NotFoundComponent } from './pages/miscellaneous/not-found/not-found.component';
-import { TournamentsComponent } from './pages/tournaments/tournaments.component';
+import { LoginComponent } from './login/login.component'
+
 
 const routes: Routes = [
-  { path: '', loadChildren: 'app/pages/pages.module#PagesModule' },
+  { path: '', loadChildren: 'app/pages/pages.module#PagesModule', canActivate : [AuthGuard] },
   
   {
     path: 'auth',
@@ -20,27 +16,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: NbLoginComponent,
-      },
-      {
-        path: 'login',
-        component: NbLoginComponent,
-      },
-      {
-        path: 'register',
-        component: NbRegisterComponent,
-      },
-      {
-        path: 'logout',
-        component: NbLogoutComponent,
-      },
-      {
-        path: 'request-password',
-        component: NbRequestPasswordComponent,
-      },
-      {
-        path: 'reset-password',
-        component: NbResetPasswordComponent,
+        component: LoginComponent,
       },
     ],
   },

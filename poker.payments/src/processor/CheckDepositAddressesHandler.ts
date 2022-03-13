@@ -29,7 +29,7 @@ export class CheckDepositAddressesHandler implements IPaymentProcessorMessageHan
         let result = new PaymentProcessorResult()
 
         let lastAddressInfo = await this.dataRepository.getLastAddressInfo();        
-        
+
         let endpoint = this.connectionConfig.endpoint + '/api/addressInfo';
         if(lastAddressInfo){
             endpoint += `?id=${lastAddressInfo._id.toString()}`;
@@ -60,7 +60,7 @@ export class CheckDepositAddressesHandler implements IPaymentProcessorMessageHan
     }
 
     async importAddressInfo(info:PokerEngineAddressInfo) : Promise<void> {
-        let existingAddressInfo = await this.dataRepository.getAddressInfoById(info._id);
+        let existingAddressInfo = this.dataRepository.getAddressInfoById(info._id);
         if(!existingAddressInfo){            
             let addressInfo = new AddressInfo();
             addressInfo._id = info._id;

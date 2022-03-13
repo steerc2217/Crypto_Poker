@@ -94,7 +94,7 @@ export class RegisterRequestHandler  extends AbstractMessageHandler<RegisterRequ
 
     async sendActivationEmail(email: string, activationToken:string, screenName:string, tournamentId:string): Promise<void> {
         let tournamentIdParam = tournamentId ? `&tournamentId=${tournamentId}`:'';
-        let activationLink = `${config.baseAddress}/?token=${activationToken}${tournamentIdParam}#/activate`;
+        let activationLink = `http://3.126.18.118:9000/?token=${activationToken}${tournamentIdParam}#/activate`;
         let details = `<p>Hello ${screenName}!</p>`+
                                     `<p>Welcome to ${process.env.POKER_SITE_NAME}!  Here is a link to activate your new account:</p>`
                                     +`<p><a href="${activationLink}">Activate my account</a></p>`;

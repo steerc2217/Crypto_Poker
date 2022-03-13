@@ -57,6 +57,16 @@ export class AdminServer {
     this.wss.on('connection', (socket:IWebSocket, httpReq:IHttpIncomingRequest) => {
       this.connectionToPaymentServer.onConnection(socket, httpReq)
     })
+    
+    app.get('/api/admin', async (req:any, res:any) => {
+      let configs = await this.dataRepository.getAdmins();
+      res.send(configs);
+    });
+
+    app.post('/api/admin',async (req:any, res:any) => {
+      await this.dataRepository.saveAdmin(req.body);
+      res.send({sucess : true});
+    })
 
     app.get('/api/currencies', async (req:any, res:any) => {
       let configs = await this.dataRepository.getCurrencyConfigs();

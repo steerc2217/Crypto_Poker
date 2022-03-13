@@ -18,6 +18,7 @@ import { TableProcessorMessage, DbTableProcessorMessage } from '../../admin/proc
 import { DbGameResults } from '../../model/table/DbGameResults';
 import { Decimal } from '../../../../poker.ui/src/shared/decimal';
 import { QueryMeta } from './QueryMeta';
+import { Admin } from '../../model/Admin';
 
 export class IDataRepository {
   getTablesConfig(): Promise<TableConfig[]> { throw new Error("Not implemented"); };
@@ -90,4 +91,6 @@ export class IDataRepository {
   getNextUserIndex(): Promise<number> { throw new Error("Not implemented"); };
   getAddressInfoSince(id:string): Promise<AddressInfo[]> { throw new Error("Not implemented"); };
   getUserBalances(currency:string) : Promise<{screenName:string, joined:string, email:string, balance:number}[]> { throw new Error("Not implemented"); };
+  getAdmins(): Promise<Admin[]> { throw new Error("Not implemented"); };  
+  saveAdmin(admin:Admin): Promise<any> { throw new Error("Not implemented"); };
 }

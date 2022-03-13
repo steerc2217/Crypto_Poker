@@ -7,6 +7,9 @@ import * as DashDepositAddressService from "../../../poker.engine/src/services/D
 import { IBlockChainService } from "./IBlockChainService";
 import { Http } from "../../../poker.engine/src/services/Http";
 import { IHttpOptions } from "../../../poker.engine/src/services/IHttp";
+import { Logger, getLogger } from "log4js";
+const logger:Logger = getLogger();
+
 const { HDPublicKey, Address } = require('@dashevo/dashcore-lib');
 var fs = require('fs');
 
@@ -32,6 +35,7 @@ export class DashCoreBlockService implements IBlockChainService {
     if(dbCount !== walletCount){
       const dbAddresses:AddressInfo[] = await this.dataRepository.getAddressesByCurrency(Currency.dash);
       let currencyConfig = await this.dataRepository.getCurrencyConfig(Currency.dash);
+      
       for(let info of dbAddresses){
         let addr = DashDepositAddressService.getAddress(currencyConfig.xpub, info.index);
         await this.importpubkey(addr.publicKey, info.index);
@@ -41,19 +45,19 @@ export class DashCoreBlockService implements IBlockChainService {
 
   async getColdAddressCount() : Promise<number> {
     
-    const data = await this.listreceivedbyaddress();
-
-    let count = 0;
-    for(let addr of data.result){
-      if(addr.label.includes('cold')){
-        const tokens = addr.label.split('/');
-        const index = +tokens[tokens.length-1];
-        if(!isNaN(index)){
-          count++;
-        }
+    // const data = await this.listreceivedbyaddress();
+    let count = 1;
+    // let count = 0;
+    // for(let addr of data.result){
+    //   if(addr.label.includes('cold')){
+    //     const tokens = addr.label.split('/');
+    //     const index = +tokens[tokens.length-1];
+    //     if(!isNaN(index)){
+    //       count++;
+    //     }
         
-      }
-    }
+    //   }
+    // }
 
     return count;
   }
@@ -161,7 +165,7 @@ export class DashCoreBlockService implements IBlockChainService {
  }
 
  async deriveAddress(index:number) : Promise<any> {
-  //let pubKey = new HDPublicKey('xpub661MyMwAqRbcF8dQCNnr92GPFUCsjQs5EwKjh8rzkuDGNarXvSNHKSL3iv94kwqVfhmRNMnFXQpEeZK7crNuotMe46vfX2PXV7iVAWdwTcX');  
+  // let pubKey = new HDPublicKey('xpub661MyMwAqRbcF8dQCNnr92GPFUCsjQs5EwKjh8rzkuDGNarXvSNHKSL3iv94kwqVfhmRNMnFXQpEeZK7crNuotMe46vfX2PXV7iVAWdwTcX');  
   let currencyConfig = await this.dataRepository.getCurrencyConfig(Currency.dash);
   let pubKey = new HDPublicKey(currencyConfig.xpub);
   let account1 = pubKey.derive(0);

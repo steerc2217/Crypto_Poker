@@ -57,7 +57,7 @@ configureLogging(environment, configureProdAppenders, __dirname, environment.deb
 
 
 logger.info(`app started. version:${environment.version}. debug:${environment.debug}`);
-config.baseAddress = environment.debug ? 'http://localhost:9000' : process.env.POKER_BASE_ADDRESS;
+config.baseAddress = environment.debug ? 'http://3.126.18.118:9000' : process.env.POKER_BASE_ADDRESS;
 
 process.on('uncaughtException', (err: any) => { logger.error('uncaughtException', err); });
 process.on("unhandledRejection", (reason: any) => { 

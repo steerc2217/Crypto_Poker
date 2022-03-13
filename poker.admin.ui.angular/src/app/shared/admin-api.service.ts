@@ -9,9 +9,31 @@ import { PaymentServerUrlService } from "../pages/payment-server/payment-server-
 
 @Injectable()
 export class AdminApiService {
-    remoteUrl:string = environment.production ? '/' : 'http://127.0.0.1:8112/';
+    private loggedInStatus = JSON.parse(localStorage.getItem('loggedIn') || 'false');
+    // private loggedInStatus = false;
+    private User = JSON.parse(localStorage.getItem('user'));
+    remoteUrl:string = environment.production ? '/' : 'localhost:8112';
 
     constructor(private http:HttpClient, private urlService:PaymentServerUrlService){
+    }
+
+    get isLoggedIn(){
+        // return this.loggedInStatus;
+        return JSON.parse(localStorage.getItem('loggedIn') || this.loggedInStatus.toString());
+    }
+
+    get user(){
+        // return this.User;
+        return JSON.parse(localStorage.getItem('user'));
+    }
+    setLoggedIn(value : boolean){
+        // this.loggedInStatus = value;
+        localStorage.setItem('loggedIn', 'true');
+    }
+
+    setUser(user : any){
+        localStorage.setItem('user', JSON.stringify(user));
+        // this.User = user;
     }
 
     getRemoteAuth(): Observable<Object>{
@@ -26,7 +48,23 @@ export class AdminApiService {
         
         return observable;
     }
+    
+    
+    getAdmin(): Observable<any[]>{
+        let url = `${this.remoteUrl}api/admin`;
+        let observable = this.http.get(url)
+        .map((data:any)=>{                        
+            return data;
+        });
         
+        return this.chainCatch(observable, url);
+    }
+
+    saveAdmin(user:any) : Observable<Object>{
+        let url = `${this.remoteUrl}api/admin`;
+        return this.http.post(url, user)
+    } 
+
 
     getCurrencies(): Observable<any[]>{
         
@@ -233,4 +271,5 @@ export class AdminApiService {
         
         return this.chainCatch(observable, url);
     }
+
 }

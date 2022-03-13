@@ -8,8 +8,12 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   padding-top: 50px;  
 }
-.navbar-default {
-  background-color: lightcyan;
+.navbar{
+  background-color: #00060F;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
 }
 .nav-logo{
     background:url($cdn + 'images/logo.png') no-repeat;
@@ -19,7 +23,7 @@ body {
     display: inline-block;
 }
 .container-fluid {
-  background-color: #E8E8E8;
+  background-color: #061d39;
   padding-bottom: 55px;
 }
 .header-nav {
@@ -108,6 +112,10 @@ body {
 }
 .cashOut:hover {
     background-color: red;
+}
+
+.table_title{
+  color: white;
 }
 
 .pingTime {
@@ -473,7 +481,7 @@ display:none;
     height: 30px;    
     line-height: 30px;
     padding-left:20px;
-    background-color: $generic-header;
+    background-color: #00060F;
 }
 
 #chatbox {
@@ -509,7 +517,14 @@ display:none;
 }
 
 #chat-input input[type=text] {
+    border: 1px solid white;  
     width:320px;
+    background-color: #00060F;
+    color: white;
+}
+
+input::placeholder {
+  color: white;
 }
 
 #submitchat {
@@ -521,10 +536,10 @@ display:none;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  background: #fff;
+  background: #00060F;
   text-align: center;
   line-height: 20px;
-  color: #000;  
+  color: white;  
 }
 
 
@@ -750,7 +765,7 @@ position: absolute;
 // }
 
 #poker-room {
-    background-image: url($cdn +'images/bg-green.png');
+    background-image: url($cdn +'images/bg-green1.png');
     background-position: center;
     background-repeat: no-repeat;
     background-position: 50% 50%;  
@@ -780,7 +795,7 @@ position: absolute;
 .grayscale {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
-  color:grey;
+  color: gray;
   font-style:italic;
 }
 
@@ -1109,9 +1124,12 @@ table.poker-tables {
 }
 
 .poker-tables td, .poker-tables th {
-    border: 1px solid gray;
+    border: 1px solid white;
     text-align: left;
     padding: 4px;
+    
+  background-color: #00060F;
+  color: white;
 }
 
 .poker-tables tr:nth-child(even) {
@@ -1119,9 +1137,11 @@ table.poker-tables {
 }
 
 .poker-tables th {
-  padding-top: 11px;
-  padding-bottom: 11px;
-  background-color: $generic-header;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: #00060F;
+  color: white;
+  text-align:center;
 }
 .poker-tables tr:hover {
     background-color: lightgray;
@@ -1135,12 +1155,15 @@ table.leaderboard {
   width: 100%;
 }
 .leaderboard th {
-  background-color: $generic-header;  
+  background-color: #00060F;  
+  color: white;
 }
 .leaderboard td, .leaderboard th {
-  border: 1px solid gray;
+  border: 1px solid white;
   text-align: left;
   padding: 4px;
+  background-color: #00060F;
+  color: white;
 }
 .leaderboard-profit-positive {
 color:green;
@@ -1195,11 +1218,12 @@ ux-dialog {
   }
 
   .panel-footer-ex {
-    
+    background-color: #00060F;
     font-size: 0.7em;
     text-align: center;
     height: 45px;
-    position: relative;    
+    position: relative;
+    color: white;
   }
 
   .footer-content {
@@ -1455,8 +1479,8 @@ ux-dialog {
   width:99px;
   display: inline-block;
 }
-.nav-dash-icon {
-    content: url($cdn + 'images/dash.png');
+.nav-solana-icon {
+    content: url($cdn + 'images/solana.png');
     vertical-align: -20%;
   }
   .coinspot-icon{

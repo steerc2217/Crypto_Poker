@@ -39,7 +39,7 @@
     "@types/lodash": "^4.14.116",
     "@types/mocha": "^5.2.5",
     "@types/mongodb": "^2.2.19",
-    "@types/node": "^10.17.14",    
+    "@types/node": "^10.17.14",
     "@types/ws": "^6.0.1",
     "jssubstitute": "github:wallaceturner/jsSubstitute",
     "mocha": "^5.2.0",

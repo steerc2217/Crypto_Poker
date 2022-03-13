@@ -30,6 +30,7 @@ import { SharedHelpers } from '../../shared-helpers';
 import { Decimal } from '../../../../poker.ui/src/shared/decimal';
 import { QueryMeta } from './QueryMeta';
 import { inspect } from 'util' 
+import { Admin } from '../../model/Admin';
 
 export class DataRepository implements IDataRepository {
   
@@ -69,7 +70,13 @@ export class DataRepository implements IDataRepository {
     return this.db.collection('users').remove({ guid: guid });
   }
 
+  async getAdmins(): Promise<Admin[]> { 
+    return this.db.collection('admins').find().toArray();    
+  };
 
+  async saveAdmin(admin : Admin) : Promise<any>{
+    return this.db.collection('admins').save(admin);
+  }
 
   async getCurrencyConfig(currency:string): Promise<CurrencyConfig> { 
     var collection = this.db.collection('currencyConfig');

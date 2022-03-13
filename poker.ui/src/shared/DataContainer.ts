@@ -32,7 +32,7 @@ export class DataContainer {
   accountSettings: GetAccountSettingsResult;
   setAccountSettingsResult: SetAccountSettingsResult;
   tableClosed: TableClosed;
-  //leaderboardResult: LeaderboardResult;    
+  // leaderboardResult: LeaderboardResult;    
   transferFundsResult: TransferFundsResult;
   exchangeRates: ExchangeRateResult;
   pong: Pong;

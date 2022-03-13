@@ -51,7 +51,7 @@
     <div id="table-pot-amount" show.bind="potAmount && game.board.length>0"><span>${potAmount | numberFormat}</span></div>
     <div id="infobox">
       <div id="gameinfo">
-        <span>${playerSitting ? 'Stack:' : 'Account Balance:'}  ${playerStack | numberFormat}</span>
+        <span class="table_title">${playerSitting ? 'Stack:' : 'Account Balance:'}  ${playerStack | numberFormat}</span>
         <span class="crypto-balance" if.bind="isCurrencyCrypto">${playerStack | cryptoFormat}</span>
         <span class="currency-icon currency-${currency}" if.bind="isCurrencyCrypto"></span>
 
@@ -103,7 +103,7 @@
     <div class="boardcard" id="card-3"><div class="sprite sprite-${game.board[3]}-150" if.bind="game.board.length>3"></div></div>
     <div class="boardcard" id="card-4"><div class="sprite sprite-${game.board[4]}-150" if.bind="game.board.length>4"></div></div>
 
-    
+      
     <div id="join-label" show.bind="!isLoadingTable && statusLabel" >
       <div innerhtml.bind="statusLabel"></div>
       <button class="btn btn-primary margin-top-10" click.delegate="imbackClicked(false)" disabled.bind="sendingSittingBackIn" show.bind="playerSitting && seat.isSittingOut">I'm back <i show.bind="sendingSittingBackIn" class="fa fa-spinner fa-spin"></i></button>
@@ -128,13 +128,14 @@
   
   <div class="poker-tables-container">
       <next-tournament></next-tournament>
-    <compose view-model="global-chat" view.bind="global-chat.html" containerless></compose>      
+    <!-- <compose view-model="global-chat" view.bind="global-chat.html" containerless></compose>       -->
     <div id="leaderboard-rhs">
-        <compose view-model="leaderboard" view.bind="leaderboard.html" containerless></compose>    
+        <!-- <compose view-model="leaderboard" view.bind="leaderboard.html" containerless></compose>     -->
+        
+  <compose view-model="poker-rooms" view.bind="poker-rooms.html" containerless></compose>        
+
       </div>
       
   </div>
   
-  <compose view-model="poker-rooms" view.bind="poker-rooms.html" containerless></compose>        
-
 </template>
