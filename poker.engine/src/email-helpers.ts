@@ -2,7 +2,7 @@ import { sendEmail } from './email/email-sender';
 import environment from './environment';
 var fs = require('fs');
 
-export async function sendStandardTemplateEmail(email:string, subject:string, details:string){       
+export async function sendStandardTemplateEmail(email:string, subject:string, details:string){     
     await sendEmail(email, subject, await getStandardTemplateEmail(details));
 }
 export async function getStandardTemplateEmail(details:string) : Promise<string> {
